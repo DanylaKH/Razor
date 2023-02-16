@@ -1,0 +1,36 @@
+﻿@page "{id}"
+@model Razor.WebPages.Pages.Products.DeleteModel
+@{     
+    ViewData["Title"] = "Delete";
+    ViewData["ShowButtons"] = false;
+}
+
+<h1 class="text-center">Delete Confirmation</h1>
+
+<div class="alert alert-danger">
+    <div class="row">
+        <div class="col-12 col-md-6 col-xl-4 ofset-sm-0 ofset-md-3 ofset-xl-4">
+            <partial name="_DisplayProductPartial" model="Model.product" view-data="ViewData" />
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-xl-4 ofset-sm-0 ofset-md-3 ofset-xl-4">
+                <div class="text-center text-secondary">
+                    <h4>Product ID: <span class="text-primary">@Model.product.id</span></h4> <hr />
+                    <h4>Product Name: <span class="text-primary">@Model.product.name</span></h4> <hr />
+                    <h4>Product Price: <span class="text-primary">@Model.product.price</span></h4> <hr />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <dib class="col text-center">
+                <h5>Are you sure to Delete product? - @Model.product.name</h5>
+
+                <form method="post">
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                    <a class="btn btn-success" asp-page="/Products/Products">No</a>
+                </form>
+            </dib>
+        </div>
+    </div>

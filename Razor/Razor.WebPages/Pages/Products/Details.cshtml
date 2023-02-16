@@ -1,0 +1,39 @@
+﻿@page
+@model Razor.WebPages.Pages.Products.DetailsModel
+@{      
+    ViewData["Title"] = "Product Details";
+    var photoPath = $"/images/{Model.product.PhotoPath}";
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.product.name</h1>
+            </div>
+            <div class="card-body text-center">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <h4 class="card-text">Product ID: @Model.product.id</h4><hr />
+                        <h4 class="card-text">Product Name: @Model.product.name</h4><hr />
+                        <h4 class="card-text">Product Price: @Model.product.price</h4><hr />
+                    </div>
+                    <div class="col col-lg-3">
+                        <div style="border-right: 1px solid rbga(0,0,0,.1);">
+                            <img class="card-img-top border-primary" style="background-color: #dle7ff;"src="@photoPath" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card-footer text-center" style="background-color: rgba(0,0,0,0.25)">
+                        <a asp-page="Products" class="btn-success">Back</a>
+                        <a href='#' class="btn-primary">Edit</a>
+                        <a href='#' class="btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
